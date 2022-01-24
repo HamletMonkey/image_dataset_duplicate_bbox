@@ -10,7 +10,7 @@ import argparse
 # original function to calculate iou score between detection and groundtruth
 def score_iou(det_bbox, gt_bbox):
     """
-    Compute IoU between a single bboxes
+    Compute IoU between pair of bboxes
 
     Arguments:
         det_bbox (ndarray): detection bbox in xyxy format
@@ -41,7 +41,7 @@ def iou_score_plot(XML_PATH, plot=True):
 
     # Arguments
         XML_PATH: path, annotation folder path
-        plot: boolean, default=True, to display iou score plot
+        plot: boolean, default=True, to display IoU score plot
 
     # Returns
         df_sort: pd.DataFrame, with columns: 'image_id','bbox_coord_pair','bbox_class_pair','iou_score'
@@ -172,7 +172,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    iou_score_plot(
+    df_iou = iou_score_plot(
         XML_PATH=args.xmlpath,
         plot=args.p,
     )
+    df_iou.to_csv("iou_score.csv")
+    print("iou_score.csv saved.")

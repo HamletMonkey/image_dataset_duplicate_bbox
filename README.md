@@ -16,10 +16,11 @@ If any duplicated bounding boxes are not of the same object class, the script wi
 - duplicated bounding boxes of class 'handbag' and 'backpack' on the same object, user to decide either to keep 'handbag' or 'backpack' as the final object class.
 
 ***Option 2:***
+
 Mainly deals with bounding box duplications including the class 'person'. By visualizing images with different IoU score, user could set a higher IoU threshold (e.g. > 0.95) when dealing with images with the class 'person' to avoid unnecessary removal of bounding boxes.
 
 ### Sample Images:
-*images with 'person' class - IoU score > 0.95:*
+*images with duplicated bounding boxes involving the 'person' class - IoU score > 0.95:*
 
 ![](png/person9500.png)
 
