@@ -5,6 +5,9 @@ This script should comes in handy after the IoU score visualization from iou_sco
 
 The function `iou_score_plot(XML_PATH, plot=True)` provides visualization to check if any bounding boxes duplications exist in our image dataset by computing the IoU score between pairs of bounding boxes in an image. High IoU score indicates high overlapping of bounding boxes - we can then decide the IoU threshold for the image dataset.
 
+
+## `remove_duplicate_bbox.py` for general XML annotations
+
 Run this script will remove duplicated bounding boxes based on the threshold passed in. One thing to take note here: high iou score between the 'person' class and other objects are common especially if objects are attached/held by 'person' in images. Hence, if the 'person' class exist in the XML files, 2 different ways of cleansing the dataset are provided:
 
 1. duplicate bbox without the class 'person'
@@ -18,6 +21,10 @@ If any duplicated bounding boxes are not of the same object class, the script wi
 ***Option 2:***
 
 Mainly deals with bounding box duplications including the class 'person'. By visualizing images with different IoU score, user could set a higher IoU threshold (e.g. > 0.95) when dealing with images with the class 'person' to avoid unnecessary removal of bounding boxes.
+
+## `remove_duplicate_pseudo_bbox.py` for pseudo generated XML annotations
+
+For pseudo generated XML annotations, each bounding box comes with a confidence score. The removal of duplicated bounding boxes will based on the confidence score, i.e. we will only keep the bounding box of the highest confidence score.
 
 ### Sample Images:
 *images with duplicated bounding boxes involving the 'person' class - IoU score > 0.95:*
