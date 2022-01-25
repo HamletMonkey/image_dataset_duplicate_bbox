@@ -28,14 +28,22 @@ Mainly deals with bounding box duplications including the class 'person'. By vis
 
 ![](png/duplicated_annotations.png)
 
+*Duplicated bounding boxes (pseudo_annotation):*
+
+![](png/pseudo_output.png)
+
 *Bounding box duplication removed:*
 
 ![](png/removed_duplications.png)
 
+*Bounding box duplication removed (pseudo_annotation):*
+
+![](png/pseudo_output1.png)
+
 
 ### Future Work
-1. To create an interface/platform for user to view and input desired parameters at the same time
-2. To include pseudo annotations handling (with confidence score)
+- [ ] To create an interface/platform for user to view and input desired parameters at the same time
+- [x] To include pseudo annotations handling (with confidence score)
 
 ## Running of Script
 Run python file in terminal - XML files which are cleaned will be saved in another folder
